@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一次温和的重访 · PG娱乐</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #faf8f4;
+            font-family: 'Georgia', 'Times New Roman', '宋体', serif;
+            color: #2d2a24;
+            line-height: 1.8;
+            padding: 2rem 1.2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .page-wrapper {
+            max-width: 760px;
+            width: 100%;
+            margin: 0 auto;
+            background: #fffcf8;
+            padding: 2.8rem 2.2rem;
+            border-radius: 28px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.02), 0 2px 6px rgba(0,0,0,0.03);
+            transition: background 0.2s;
+        }
+
+        /* 开场短句 — 叙事式 */
+        .opening {
+            font-size: 1.3rem;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            border-left: 4px solid #d9c9b0;
+            padding-left: 1.5rem;
+            margin-bottom: 2.2rem;
+            color: #4d4439;
+            font-style: italic;
+        }
+
+        .opening span {
+            background: #efe7db;
+            padding: 0.1rem 0.6rem;
+            border-radius: 3px;
+            font-style: normal;
+            color: #3f362b;
+        }
+
+        /* 承接段落 */
+        .intro-text {
+            margin-bottom: 2.6rem;
+        }
+
+        .intro-text p {
+            margin-bottom: 1.4rem;
+            text-indent: 2em;
+            font-size: 1.05rem;
+        }
+
+        .intro-text p:first-of-type {
+            text-indent: 0;
+        }
+
+        .intro-text a {
+            color: #7f6b52;
+            text-decoration: none;
+            border-bottom: 1px dashed #b8a68f;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        .intro-text a:hover {
+            color: #4a3f32;
+            border-bottom: 1px solid #4a3f32;
+        }
+
+        /* 引用块 / 提示框 */
+        .gentle-note {
+            background: #f3efe9;
+            border-radius: 20px;
+            padding: 1.6rem 1.8rem;
+            margin: 2rem 0 2.4rem 0;
+            border-left: 6px solid #cbbca7;
+            box-shadow: inset 0 1px 4px rgba(0,0,0,0.02);
+        }
+
+        .gentle-note p {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #3b342d;
+            text-indent: 0;
+        }
+
+        .gentle-note p:not(:last-child) {
+            margin-bottom: 0.8rem;
+        }
+
+        .gentle-note .note-label {
+            display: inline-block;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: #8b7b66;
+            border-bottom: 1px solid #d6cbbc;
+            padding-bottom: 2px;
+            margin-bottom: 0.5rem;
+        }
+
+        /* 特点列表 — 用故事化的描述 */
+        .feature-list {
+            margin: 2.2rem 0 1.8rem 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .feature-list li {
+            position: relative;
+            padding: 0.7rem 0 0.7rem 2.2rem;
+            border-bottom: 1px solid #ece4d9;
+            font-size: 1.02rem;
+            color: #3b342d;
+        }
+
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+
+        .feature-list li::before {
+            content: "·";
+            position: absolute;
+            left: 0.2rem;
+            top: 0.65rem;
+            font-size: 2rem;
+            line-height: 1;
+            color: #b3a088;
+        }
+
+        .feature-list li strong {
+            font-weight: 500;
+            color: #5f5241;
+        }
+
+        /* 温和结尾 */
+        .closing {
+            margin-top: 2.8rem;
+            padding-top: 1.8rem;
+            border-top: 1px solid #e5dcd0;
+            font-size: 1rem;
+            text-align: left;
+        }
+
+        .closing p {
+            margin-bottom: 0.6rem;
+            color: #4b4238;
+        }
+
+        .closing .signature {
+            font-size: 0.95rem;
+            color: #887b6a;
+            margin-top: 1rem;
+            letter-spacing: 0.3px;
+        }
+
+        .closing a {
+            color: #7f6b52;
+            text-decoration: none;
+            border-bottom: 1px dotted #b8a68f;
+        }
+
+        .closing a:hover {
+            color: #3f362b;
+            border-bottom: 1px solid #3f362b;
+        }
+
+        /* 响应式细节 */
+        @media (max-width: 560px) {
+            body {
+                padding: 1.2rem 0.8rem;
+            }
+            .page-wrapper {
+                padding: 1.8rem 1.2rem;
+                border-radius: 20px;
+            }
+            .opening {
+                font-size: 1.1rem;
+                padding-left: 1rem;
+                margin-bottom: 1.6rem;
+            }
+            .intro-text p {
+                font-size: 0.98rem;
+            }
+            .gentle-note {
+                padding: 1.2rem 1.2rem;
+                margin: 1.4rem 0;
+            }
+            .feature-list li {
+                font-size: 0.96rem;
+                padding-left: 1.8rem;
+            }
+            .feature-list li::before {
+                left: 0;
+                font-size: 1.6rem;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .page-wrapper {
+                padding: 1.2rem 0.9rem;
+            }
+            .opening {
+                font-size: 1rem;
+                padding-left: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrapper">
+
+    <!-- 开场短句：重新遇见 -->
+    <div class="opening">
+        <span>再次翻开书页</span> —— 有些地方值得反复造访。
+    </div>
+
+    <!-- 承接段落：重访与收藏的缘由 -->
+    <div class="intro-text">
+        <p>
+            网络如同广阔的书架，我们总在无意中遇见一些角落，它们并不喧哗，却在细微之处提供持续的安宁与信息。<strong>PG娱乐</strong> 便是这样一个地方——并非初见的惊艳，而是重逢时依然觉得妥帖。它没有浮夸的装饰，也不急于推销什么，只是安静地存在，等待那些想要放松片刻的目光。
+        </p>
+        <p>
+            大概在两年前，我无意间将 <a href="https://main-pgyule.com">PG娱乐</a> 加入了书签栏。起初只是偶尔点开，浏览一些无关紧要的页面；后来渐渐养成习惯，就像晚饭后随手翻开一本旧杂志。它的内容更迭不算频繁，但每一次更新都带着明确的用心——没有信息轰炸，只有克制的分享。或许正因为这种节律，我反而更愿意将它保留在收藏夹里。
+        </p>
+        <p>
+            最近整理书签时，发现很多曾经收藏的站点都已沉寂或改头换面，唯独 <a href="https://main-pgyule.com">PG娱乐</a> 保持着最初的质地。这让我想到，有些事物并不需要时刻发光，它们更像壁炉里的余烬，在需要温暖的时候，轻轻一拨，便又有了温度。
+        </p>
+    </div>
+
+    <!-- 提示框 / 引用块 -->
+    <div class="gentle-note">
+        <span class="note-label">📌 一个简单的想法</span>
+        <p>“收藏夹里总有一些地址，我们很少刻意推荐给别人，却愿意在独处时一再打开。PG娱乐给我的感觉就是如此——它不承诺任何奇迹，却总能在你需要的时候，提供一种恰好的陪伴感。”</p>
+        <p style="margin-top: 0.2rem; font-style: italic; opacity: 0.8;">—— 来自一位常驻访客的笔记</p>
+    </div>
+
+    <!-- 特点列表：从持续关注的角度展开 -->
+    <ul class="feature-list">
+        <li><strong>稳定的节奏</strong> —— 内容更新适时且克制，不会让你的通知栏陷入无休止的提醒。</li>
+        <li><strong>干净的结构</strong> —— 没有弹窗、浮层与自动播放，页面布局始终清晰，像一本排版讲究的读物。</li>
+        <li><strong>温暖的调性</strong> —— 从配色到语气都保持温和，即便只是随意滑动，也不会感到视觉疲劳。</li>
+        <li><strong>习惯的角落</strong> —— 适合收藏并定期回访，它不会催促你，但你知道它一直在那里。</li>
+    </ul>
+
+    <!-- 温和结尾：回到重访的主题 -->
+    <div class="closing">
+        <p>
+            所以，如果你也曾路过 <a href="https://main-pgyule.com">PG娱乐</a>，不妨再给它一次机会——不是作为一次性的浏览，而是当作一个可以持续关注的小小据点。收藏它，不是为了哪天一定要用上，而是为了在需要一段安静在线时光时，有个不会令你失望的去处。
+        </p>
+        <p>
+            收藏夹里的东西会越来越多，但总有些地址，值得你一再点开。愿它也能成为你书签栏里那个不声不响却始终存在的名字。
+        </p>
+        <div class="signature">
+            于一个安静的傍晚 · 重访笔记
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
